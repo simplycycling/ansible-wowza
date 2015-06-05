@@ -3,7 +3,7 @@
 # Thanks to Glenn Jackman on stack overflow for helping me with this script
 
 set timeout -1
-spawn sudo ./WowzaStreamingEngine-4.1.2.deb.bin
+spawn sudo ./{{ wowza_version }}
 
 expect {
     -gl "*--More--*" { send -- " "; exp_continue }
