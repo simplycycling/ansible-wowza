@@ -1,0 +1,24 @@
+#!/usr/bin/expect -f
+
+# Thanks to Glenn Jackman on stack overflow for helping me with this script
+
+set timeout -1
+spawn sudo ./WowzaStreamingEngine-4.1.2.deb.bin
+
+expect {
+    -gl "*--More--*" { send -- " "; exp_continue }
+    -ex "Do you agree to the above license terms?"
+}
+send -- "yes\r"
+expect -gl "*User Name: "
+send -- "{{ user_name }}\r"
+expect -gl "*Password: "
+send -- "{{ password }}\r"
+expect -gl "*Confirm Password: "
+send -- "{{ password }}\r"
+expect -gl "*Please enter a Wowza Streaming Engine license key*"
+send -- "{{ license_key }}\r"
+expect -ex "Start Wowza Streaming Engine automatically when this system reboots?"
+send -- "yes\r"
+
+expect eof
