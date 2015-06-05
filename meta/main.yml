@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: Roger Sherman
+  description: Automate installation of Wowza Media Server
+  license: MIT
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+
+  categories:
+  - web
+  - cloud
+  - system
