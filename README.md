@@ -20,7 +20,7 @@ _Wowza software is platform-agnostic, multi-format, and multi-screen. It takes i
 
 ## Usage
 
-Wowza needs several things on the interactive prompt portion of the installer:
+Wowza needs several user actions on the interactive prompt portion of the installer:
 - an acknowledgement of acceptance of their terms
 - an administrative user added for using the Wowza console
 - a password for the administrative user
