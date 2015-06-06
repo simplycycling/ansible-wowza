@@ -17,3 +17,17 @@ From the Wowza site:
 _Wowza Streaming Engine™ is robust, customizable media server software that powers reliable streaming of high-quality video and audio to any device, anywhere._
 
 _Wowza software is platform-agnostic, multi-format, and multi-screen. It takes in any video format, transcodes it once, and reliably delivers it in multiple formats and with the highest possible quality_
+
+## Usage
+
+Wowza needs several things on the interactive prompt portion of the installer:
+- an acknowledgement of acceptance of their terms
+- an administrative user added for using the Wowza console
+- a password for the administrative user
+- confirmation of that password
+- Wowza license key
+- an acknowledgement of whether or not you want Wowza to start at boot
+
+Fill these values in, in vars/main.yml. I've already taken the liberty of answering "yes" for the acceptance of terms,
+and whether or not you want Wowza to start at boot, but you can easily change that, should you feel the need. Those 
+values can be edited in the template/script.exp.j2 file.
