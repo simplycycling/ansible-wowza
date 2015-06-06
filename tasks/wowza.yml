@@ -1,11 +1,11 @@
 ---
 - name: push app out to rtmp node
-  copy: src=../files/{{ wowza_version }} dest=/home/vagrant/{{ wowza_version }} mode=0755
+  copy: src={{ wowza_version }} dest=/home/vagrant/{{ wowza_version }} mode=0755
 - name: install expect
   apt: name={{ item }} update_cache=yes
   with_items: the_expectables
-- name: push expect template
-  template: src=../template/script.exp.j2 dest=/home/vagrant/script.exp mode=0755
+- name: push expect templates
+  template: src=script.exp.j2 dest=/home/vagrant/script.exp mode=0755
 - name: Run expect script, which runs Wowza installer
   args:
     creates: /usr/local/WowzaStreamingEngine/conf/Server.license
