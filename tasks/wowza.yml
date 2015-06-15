@@ -1,6 +1,6 @@
 ---
-- name: push app out to rtmp node
-  copy: src={{ wowza_version }} dest=/home/vagrant/{{ wowza_version }} mode=0755
+- name: Get Wowza
+  get_url: url=http://www.wowza.com/downloads/WowzaStreamingEngine-4-1-2/{{ wowza_version }} dest=/home/vagrant/{{ wowza_version }} mode=0755
 - name: install expect
   apt: name={{ item }} update_cache=yes
   with_items: the_expectables
