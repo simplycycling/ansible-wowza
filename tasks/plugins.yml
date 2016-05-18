@@ -8,4 +8,4 @@
   unarchive: src={{item}} dest={{wowza_install_dir}} copy=no
   with_items: wowza_plugin_zips
   when: wowza_plugin_zips
-  notify: notify: restart WowzaStreamingEngine
+  notify: restart WowzaStreamingEngine
