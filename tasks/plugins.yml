@@ -1,4 +1,9 @@
 ---
+- name: Make sure extract apps are installed
+  apt: name={{item}} state=present update_cache=yes
+  with_items:
+    - unzip
+
 - name: Extract plugins
   unarchive: src={{item}} dest={{wowza_install_dir}}/lib copy=no
   with_items: wowza_plugin_zips
