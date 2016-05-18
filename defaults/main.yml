@@ -3,6 +3,9 @@ wowza_version: "WowzaStreamingEngine-4.4.1"
 wowza_user_name: "username"
 wowza_password: "password"
 wowza_license_key: "insert key between quotations"
+wowza_install_dir: "/usr/local/WowzaStreamingEngine"
+
+wowza_plugin_zips: []
 
 the_expectables:
 - expect

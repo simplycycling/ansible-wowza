@@ -1,0 +1,5 @@
+---
+- name: Extract plugins
+  unarchive: src={{item}} dest={{wowza_install_dir}}/lib copy=no
+  with_items: wowza_plugin_zips
+  when: wowza_plugin_zips

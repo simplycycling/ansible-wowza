@@ -1,2 +1,3 @@
 ---
 - include: wowza.yml
+- include: plugins.yml
