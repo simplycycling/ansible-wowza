@@ -1,11 +1,11 @@
 ---
-- name: Get Wowza
-  get_url: url=http://www.wowza.com/downloads/WowzaStreamingEngine-4-1-2/{{ wowza_version }} dest=/home/vagrant/{{ wowza_version }} mode=0755
+- name: Get Wowza ({{ wowza_installer }})
+  get_url: url={{ wowza_download_path }}{{ wowza_installer }} dest={{ lookup('env', 'HOME') }}/{{ wowza_installer }} mode=0755 owner={{ lookup('env', 'USER') }}
 - name: install expect
   apt: name={{ item }} update_cache=yes
-  with_items: the_expectables
+  with_items: "{{ the_expectables }}"
 - name: push expect templates
-  template: src=script.exp.j2 dest=/home/vagrant/script.exp mode=0755
+  template: src=script.exp.j2 dest={{ lookup('env', 'HOME') }}/script.exp mode=0755 owner={{ lookup('env', 'USER') }}
 - name: Run expect script, which runs Wowza installer
   args:
     creates: /usr/local/WowzaStreamingEngine/conf/Server.license
