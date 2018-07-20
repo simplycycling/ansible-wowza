@@ -1,5 +1,5 @@
-wowza_package: "WowzaStreamingEngine-4-4-1"
-wowza_version: "WowzaStreamingEngine-4.4.1"
+wowza_package: "WowzaStreamingEngine-4-7-5"
+wowza_version: "WowzaStreamingEngine-4.7.5"
 wowza_user_name: "username"
 wowza_password: "password"
 wowza_license_key: "insert key between quotations"
