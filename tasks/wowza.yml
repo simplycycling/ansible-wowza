@@ -9,4 +9,7 @@
 - name: Run expect script, which runs Wowza installer
   args:
     creates: /usr/local/WowzaStreamingEngine/conf/Server.license
-  shell: ./script.exp
+  shell: /tmp/script.exp
+
+- name: WowzaStreamingEngine service started and enabled
+  service: name=WowzaStreamingEngine state=started enabled=yes

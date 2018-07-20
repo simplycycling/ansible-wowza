@@ -6,10 +6,10 @@ long EULA, and 5 interactive prompts.
 # Requirements
 - Java jdk - I use Oracle Java 7, but openjdk will be just fine.
 - Wowza license - this you will get when you sign up for a free trial, or you can request a developer license.
-- Wowza binary - the Wowza binary is wgetted as part of this role. (Current Wowza version: 4.7.1)
+- Wowza binary - the Wowza binary is wgetted as part of this role. (Current Wowza version: 4.7.5)
 
 # Distros tested
-Currently, this is only tested on Ubuntu 14.04, but as time allows, I'll be testing it on other distros/versions.
+Currently, this is only tested on Ubuntu 14.04, but as time allows
 
 ## Wait a minute, what the hell is Wowza?
 From the Wowza site:
@@ -29,5 +29,5 @@ Wowza needs several user actions on the interactive prompt portion of the instal
 - an acknowledgement of whether or not you want Wowza to start at boot
 
 Fill these values in, in vars/main.yml. I've already taken the liberty of answering "yes" for the acceptance of terms,
-and whether or not you want Wowza to start at boot, but you can easily change that, should you feel the need. Those 
+and whether or not you want Wowza to start at boot, but you can easily change that, should you feel the need. Those
 values can be edited in the template/script.exp.j2 file.

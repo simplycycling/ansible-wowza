@@ -1,0 +1,12 @@
+---
+# handlers file for wowza
+- name: restart WowzaStreamingEngine
+  service: name=WowzaStreamingEngine state=restarted
+
+- name: start WowzaStreamingEngine
+  service: name=WowzaStreamingEngine state=started
+  tags: rabbitmq
+
+- name: stop WowzaStreamingEngine
+  service: name=WowzaStreamingEngine state=stopped
+  tags: rabbitmq
