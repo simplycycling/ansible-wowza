@@ -3,25 +3,29 @@
 # Thanks to Glenn Jackman on stack overflow for helping me with this script
 
 set timeout -1
-spawn sudo /tmp/{{ wowza_version }}-linux-x64-installer.run
-send -- "y\r"
+spawn sudo ./{{ wowza_installer }}
+match_max 100000
+
 expect {
-    -gl "*Press*to continue*" { send -- "\r"; exp_continue }
-    -ex "Do you accept this agreement?"
+    -exact "Press \[Enter\] to continue:" { send -- "\r"; exp_continue }
+    -ex "Do you accept this agreement? \[y/n\]: "
 }
 send -- "y\r"
-expect -gl "*License Key: "
-send -- "{{ wowza_license_key }}\r"
-expect -gl "*User Name: "
-send -- "{{ wowza_user_name }}\r"
-expect -gl "*Password: "
-send -- "{{ wowza_password }}\r"
-expect -gl "*Confirm Password: "
-send -- "{{ wowza_password }}\r"
-expect -ex "Start Wowza Streaming Engine automatically "
-send -- "y\r"
-expect -ex "Do you want to continue?"
+
+expect -exact "License Key: \[\]: "
+send -- "{{ license_key }}\r"
+
+expect -exact "User Name: \[\]: "
+send -- "{{ user_name }}\r"
+
+expect -exact "Password: :"
+send -- "{{ password }}\r"
+expect -exact "Confirm Password: :"
+send -- "{{ password }}\r"
+
+expect -exact "Start Wowza Streaming Engine automatically \[Y/n\]: "
 send -- "y\r"
 
-
+expect -exact "Do you want to continue? \[Y/n\]: "
+send -- "y\r"
 expect eof

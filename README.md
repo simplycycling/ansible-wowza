@@ -6,7 +6,7 @@ long EULA, and 5 interactive prompts.
 # Requirements
 - Java jdk - I use Oracle Java 7, but openjdk will be just fine.
 - Wowza license - this you will get when you sign up for a free trial, or you can request a developer license.
-- Wowza binary - the Wowza binary (4.7.5) is now wgetted as part of this role.
+- Wowza binary - the Wowza binary is wgetted as part of this role. (Current Wowza version: 4.7.5)
 
 # Distros tested
 Currently, this is only tested on Ubuntu 14.04, but as time allows

@@ -1,10 +1,11 @@
 ---
-- name: Get Wowza
-  get_url: url=https://www.wowza.com/downloads/{{ wowza_package }}/{{ wowza_version }}-linux-x64-installer.run dest=/tmp/{{ wowza_version }}-linux-x64-installer.run mode=0755
+- name: Get Wowza ({{ wowza_installer }})
+  get_url: url={{ wowza_download_path }}{{ wowza_installer }} dest={{ ansible_env.HOME }}/{{ wowza_installer }} mode=0755 owner={{ ansible_env.USER  }}
 - name: install expect
-  apt: name=expect update_cache=yes
+  apt: name={{ item }} update_cache=yes
+  with_items: "{{ the_expectables }}"
 - name: push expect templates
-  template: src=script.exp.j2 dest=/tmp/script.exp mode=0755
+  template: src=script.exp.j2 dest={{ ansible_env.HOME  }}/script.exp mode=0755 owner={{ ansible_env.USER }}
 - name: Run expect script, which runs Wowza installer
   args:
     creates: /usr/local/WowzaStreamingEngine/conf/Server.license

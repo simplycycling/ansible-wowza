@@ -1,11 +1,8 @@
-wowza_package: "WowzaStreamingEngine-4-7-5"
-wowza_version: "WowzaStreamingEngine-4.7.5"
-wowza_user_name: "username"
-wowza_password: "password"
-wowza_license_key: "insert key between quotations"
-wowza_install_dir: "/usr/local/WowzaStreamingEngine"
-
-wowza_plugin_zips: []
+wowza_download_path: "https://www.wowza.com/downloads/WowzaStreamingEngine-4-7-5/"
+wowza_installer: "WowzaStreamingEngine-4.7.5-linux-x64-installer.run"
+user_name: "username"
+password: "password"
+license_key: "insert key between quotations"
 
 the_expectables:
 - expect
